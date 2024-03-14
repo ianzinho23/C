@@ -1,22 +1,41 @@
 #include <stdio.h>
 #include <locale.h>
 #include <string.h>
+#include <stdbool.h>
+
 	int main(){
+		setlocale(LC_ALL,"");
+		
 		char loginCadrastado[200]= "Ian";
 		char senhaCadrastada[200]= "12345";
 		char login [200];
 		char senha[200];
+		bool loginCorreto;
+		bool senhaCorreta;
 		
 		do{
 			printf("\n===SENAI===\n");
 			printf("Digite seu login: ");
-			scanf("%s",login);
+			scanf("%s",&login);
 			
 			printf("Digite sua senha: ");
-			scanf("%s",senha);
-		}while(!strcmp(loginCadrastado,login)!= 0 || strcmp(senhaCadrastada,senha)!=0);
+			scanf("%s",&senha);
+			
+			loginCorreto=strcmp(loginCadrastado,login)==0;
+			senhaCorreta=strcmp(senhaCadrastada,senha)==0;
+			
+			if(loginCorreto == true){
+				printf("O login está correto! \n");
+				
+			}
+			if(senhaCorreta){
+				printf("A senha está correta! \n");
+			}
+				
+			
+		}while (!loginCorreto ||!senhaCorreta);
 		
-		printf("Acessando o sistema...");
+		printf("\n\nAcessando o sistema...");
 		
 		return 0;
 	}
