@@ -14,7 +14,7 @@
 			
 			printf("Digite sua senha: ");
 			scanf("%s",senha);
-		}while(!strcmp(loginCadrastado,login)!= 0 && strcmp(senhaCadrastada,senha)!=0);
+		}while(!strcmp(loginCadrastado,login)!= 0 || strcmp(senhaCadrastada,senha)!=0);
 		
 		printf("Acessando o sistema...");
 		
