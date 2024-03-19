@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+#define TAM 10
+	
+	int main(){
+		setlocale(LC_ALL,"");
+		
+		int i;
+		int numeros[TAM];
+		int numerosnegativos=0,numerospositivos=0;
+		int somaPositivos=0;
+		
+		printf("===SOLICITANDO VALORES===\n");
+		for(i=0;i<TAM;i++){
+			printf("Digite o %iº valor: ",i+1);
+			scanf("%i",&numeros[i]);
+			
+		if(numeros[i] > 0){
+			somaPositivos += numeros[i];
+		}
+		if(numeros[i] > 0){
+			numerospositivos++;
+		}else{
+			numerosnegativos++;
+		}
+									
+		}
+			printf("\n===Exibindo Resultados===\n");
+		printf("Numeros positivos: %i \n",
+		numerospositivos);
+		printf("Numeros negativos: %i \n",numerosnegativos);
+		printf("Soma numeros positivos: %i \n",somaPositivos);
+	}
