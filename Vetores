@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+	int main(){
+		setlocale(LC_ALL,"");
+		
+		int numeros[6];
+		int impares=0,pares=0;
+		int i;
+		
+		printf("\n====Solicitando Notas==== \n");
+		for (i=0;i<6;i++) {
+		
+		printf("Digite a  %iº nota:",i+1);
+		scanf("%i",&numeros[i]);
+		
+ 		if(numeros[i] % 2 == 0){
+		 		pares++;
+			}else{
+				
+				impares++;
+	
+		}
+	
+		
+	}	
+		printf("\n=== Exibindo Resultados === \n");
+		printf("Números digitados: \n");
+		for (i=0; i<6;i++){
+			printf("%iº número: %i \n",i+1,numeros[i]);
+		}
+		
+		printf("====Exibindo Resultados=== \n");
+		printf("Números par: %i \n ",pares);
+		printf("Números impares: %i \n ",impares);
+		
+		return 0;
+
+}
