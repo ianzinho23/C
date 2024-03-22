@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+#include <stdbool.h>
+
+#define TAM 5
+
+	int main(){
+		setlocale(LC_ALL,"");
+		
+		int i;
+		int numeros[TAM];
+		int numN=0,numP=0;
+		int numerosPares=0,numerosImpares=0;
+		int maiorNumero=0,menorNumero=999;
+		float mediaPares=0,mediaImpares=0,mediaGeral=0;
+		int somaPares=0,somaImpares=0,somaGeral=0;
+		int n=0;
+		
+	  
+         for(i=0; i<TAM; i++){
+         	
+         	
+         	
+         	
+         	printf("Digite o %iª numero: ", i+1);
+        	scanf("%i",&numeros[i]);
+        	n++;
+        	if(numeros[i]%2==0){
+        		numerosPares++;
+        		somaPares+=numeros[i];	
+        		}else{
+        			numerosImpares++;
+        			somaImpares+=numeros[i];
+        			
+				}
+				if(numeros[i]<=0){
+					numN++;
+					
+					
+				}else{
+					numP++;
+					
+				}
+				if(maiorNumero<numeros[i]){
+					maiorNumero=numeros[i];
+					
+				}
+				if(menorNumero>numeros[i]){
+					menorNumero=numeros[i];
+				}
+			somaGeral+=numeros[i];
+			}
+			mediaPares=somaPares/numerosPares;
+			mediaImpares=somaImpares/numerosImpares;
+        	mediaGeral=somaGeral/n;
+        	printf("Quantidade de numeros Pares: %i\n",numerosPares);
+        	printf("Quantidade de numeros ImPares: %i\n",numerosImpares);
+		 	printf("Quantidade de numeros de positivos: %i\n",numP);
+			printf("Quantidade de numeros de Negativo: %i\n",numN);
+			printf("Maior: %i\n",maiorNumero);		 
+		 	printf("Menor: %i\n",menorNumero);
+		 	printf("Media de pares: %.1f\n",mediaPares);
+		 	printf("Media de impares: %.1f\n",mediaImpares);
+		 	printf("Media Geral: %.1f\n",mediaGeral);
+		 	for(i=4;i>=0;i--){
+		 		printf("%i\n",numeros[i]);
+			 }
+		 
+		 }	  
+	  
+	  
+
+	
